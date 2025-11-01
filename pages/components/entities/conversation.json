@@ -1,0 +1,57 @@
+{
+  "type": "object",
+  "properties": {
+    "session_id": {
+      "type": "string",
+      "description": "Unique session identifier"
+    },
+    "user_name": {
+      "type": "string",
+      "description": "User's name if provided"
+    },
+    "messages": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      },
+      "description": "Full conversation history"
+    },
+    "context": {
+      "type": "object",
+      "description": "Current conversation context and state"
+    },
+    "user_preferences": {
+      "type": "object",
+      "description": "User preferences learned during conversation"
+    },
+    "active_tasks": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Ongoing tasks or topics"
+    },
+    "emotion_state": {
+      "type": "string",
+      "enum": [
+        "neutral",
+        "happy",
+        "curious",
+        "urgent",
+        "casual",
+        "professional"
+      ],
+      "default": "neutral",
+      "description": "Detected user emotion/tone"
+    },
+    "last_interaction": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Last interaction timestamp"
+    }
+  },
+  "required": [
+    "session_id"
+  ],
+  "name": "Conversation"
+}

@@ -1,0 +1,59 @@
+{
+  "type": "object",
+  "properties": {
+    "category": {
+      "type": "string",
+      "enum": [
+        "personal_info",
+        "preference",
+        "fact",
+        "conversation",
+        "command",
+        "real_time_data",
+        "learned_knowledge"
+      ],
+      "description": "Type of memory stored in JARVIS brain"
+    },
+    "content": {
+      "type": "string",
+      "description": "The actual memory content"
+    },
+    "context": {
+      "type": "string",
+      "description": "Additional context about this memory"
+    },
+    "importance": {
+      "type": "number",
+      "minimum": 1,
+      "maximum": 10,
+      "default": 5,
+      "description": "Importance level (1-10, higher = more important)"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Tags for categorization and retrieval"
+    },
+    "last_accessed": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Last time this memory was accessed"
+    },
+    "access_count": {
+      "type": "number",
+      "default": 0,
+      "description": "Number of times accessed"
+    },
+    "source": {
+      "type": "string",
+      "description": "Where this memory came from (conversation, internet, user command, etc.)"
+    }
+  },
+  "required": [
+    "category",
+    "content"
+  ],
+  "name": "Memory"
+}
